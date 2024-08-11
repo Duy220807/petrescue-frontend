@@ -1,0 +1,19 @@
+/* src/App.css */
+/* src/index.css */
+
+.site-layout-background {
+    background: #fff;
+}
+
+.logo {
+    font-size: 24px;
+    color: #fff;
+    line-height: 64px;
+    padding: 0 20px;
+    height: 64px;
+}
+
+.site-layout-content {
+    padding: 24px;
+    min-height: 280px;
+}

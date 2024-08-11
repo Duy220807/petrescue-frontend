@@ -1,0 +1,98 @@
+.site-layout-background {
+    background: #ffffff; // Màu nền sáng trắng
+    padding: 0 20px; // Tăng khoảng cách bên trái và phải
+    display: flex;
+    align-items: center; // Căn chỉnh các phần tử lên trên cùng
+    justify-content: space-between; // Phân bổ khoảng cách giữa các phần tử
+    height: 70px; // Tăng chiều cao của header
+    line-height: 70px; // Căn chỉnh dòng chữ
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); // Bóng nhẹ để tạo chiều sâu
+    margin-bottom: 20px; // Thêm khoảng cách dưới cùng cho header
+    border-bottom: 1px solid #f0f0f0; // Đường viền dưới header
+}
+
+.logo {
+    font-size: 26px; // Tăng kích thước chữ của logo
+    color: #1890ff; // Màu chữ xanh dương sáng
+    font-weight: bold;
+    margin-right: auto; // Đẩy logo sang bên trái
+    transition: color 0.3s ease; // Thêm hiệu ứng chuyển màu khi hover
+
+    &:hover {
+        color: #40a9ff; // Màu khi hover
+    }
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    margin-left: auto; // Đẩy các phần tử trong header-content sang bên phải
+    width: auto; // Để header-content không bị giới hạn chiều rộng
+
+    .search-bar {
+        width: 350px; // Tăng chiều rộng của thanh tìm kiếm
+        font-size: 18px; // Tăng kích thước chữ trong thanh tìm kiếm
+        margin-right: 20px;
+        // border-radius: 20px; // Thêm bo tròn góc
+        background: #f7f7f7; // Màu nền sáng cho thanh tìm kiếm
+        // border: 1px solid #d9d9d9; // Đường viền sáng
+
+        &:hover {
+            border-color: #1890ff; // Đổi màu đường viền khi hover
+        }
+    }
+
+    .header-icons {
+        display: flex;
+        align-items: center;
+
+        .cart-icon {
+            margin-right: 20px;
+
+            .anticon {
+                svg {
+                    font-size: 24px; // Tăng kích thước biểu tượng giỏ hàng
+                    color: #1890ff; // Màu biểu tượng xanh dương sáng
+                    transition: color 0.3s ease; // Thêm hiệu ứng chuyển màu
+
+                    &:hover {
+                        color: #40a9ff; // Màu khi hover
+                    }
+                }
+            }
+
+        }
+    }
+
+    .sign-up-link {
+        font-size: 16px; // Kích thước chữ
+        margin-left: 10px;
+        color: #ffffff; // Màu chữ của nút
+        background-color: #1890ff; // Màu nền của nút
+        border: none; // Không có đường viền
+        border-radius: 4px; // Bo tròn góc nếu cần
+        padding: 8px 16px; // Khoảng cách bên trong nút
+        transition: background-color 0.3s ease; // Hiệu ứng chuyển màu nền
+
+        &:hover {
+            background-color: #40a9ff; // Màu nền khi hover
+            color: #ffffff; // Màu chữ khi hover
+        }
+    }
+
+    .login-link2 {
+        font-size: 16px; // Kích thước chữ
+        margin-left: 10px;
+        color: #ffffff; // Màu chữ của nút
+        background-color: rgba(245, 178, 91); // Màu nền của nút
+        border: none; // Không có đường viền
+        border-radius: 4px; // Bo tròn góc nếu cần
+        padding: 8px 16px; // Khoảng cách bên trong nút
+        transition: background-color 0.3s ease; // Hiệu ứng chuyển màu nền
+
+        &:hover {
+            background-color: rgba(245, 178, 91); // Màu nền khi hover
+            color: #ffffff; // Màu chữ khi hover
+        }
+    }
+}

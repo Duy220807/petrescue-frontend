@@ -1,0 +1,214 @@
+// src/pages/Home.scss
+
+$primary-color: #1890ff;
+$secondary-color: #f0f2f5;
+$hover-bg-color: #e6f7ff;
+$border-color: #d9d9d9;
+$overlay-bg-color: rgba(0, 0, 0, 0.5);
+$shadow-light: rgba(0, 0, 0, 0.1);
+$shadow-dark: rgba(0, 0, 0, 0.2);
+
+.home-container {
+    padding: 20px;
+    background-color: $secondary-color;
+}
+
+.product-link {
+    text-decoration: none;
+}
+
+.product-card {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px $shadow-light;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #e8e8e8;
+    margin: 10px 0;
+    height: 100%;
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 16px $shadow-dark;
+    }
+}
+
+.product-image-container {
+    position: relative;
+}
+
+.product-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-bottom: 1px solid #e8e8e8;
+
+    @media (max-width: 768px) {
+        height: 200px;
+    }
+}
+
+.buy-now-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $overlay-bg-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    .ant-btn {
+        color: #fff;
+    }
+}
+
+.product-image-container:hover .buy-now-overlay {
+    opacity: 1;
+}
+
+.ant-card-meta-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.ant-card-meta-description {
+    color: #888;
+}
+
+.ant-card-actions {
+    justify-content: center;
+}
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: $secondary-color;
+}
+
+.sort-bar {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.banner-slider {
+    margin-bottom: 20px;
+}
+
+.banner-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+}
+
+.banner-slide {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px $shadow-light;
+
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+
+        @media (max-width: 768px) {
+            height: 200px;
+        }
+    }
+}
+
+.ant-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.custom-prev-arrow,
+.custom-next-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 10px;
+    transform: translateY(-50%);
+
+    img {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.custom-prev-arrow {
+    left: 10px;
+}
+
+.custom-next-arrow {
+    right: 10px;
+}
+
+.site-layout-background {
+    border-right: 1px solid $border-color;
+
+    .ant-menu-item {
+        color: #000;
+
+        &:hover {
+            background-color: $hover-bg-color;
+            color: $primary-color;
+        }
+    }
+}
+
+.ant-card-meta-description {
+    color: #888;
+    font-size: 1rem; // Điều chỉnh kích thước font của mô tả
+    font-weight: 400;
+}
+
+.price-highlight {
+    font-size: 1.4rem; // Điều chỉnh kích thước chữ
+    font-weight: bold; // Làm cho chữ đậm
+    color: $primary-color; // Màu sắc nổi bật
+}
+
+
+.ant-card-meta-title {
+    font-size: 1.5rem; // Tăng kích thước font của tên sản phẩm
+    font-weight: bold; // Đổi font thành đậm
+    margin-bottom: 0; // Xóa khoảng cách dưới tiêu đề nếu cần
+}
+
+.ant-card-meta-description {
+    color: #888;
+    font-size: 1rem; // Điều chỉnh kích thước font của mô tả
+    font-weight: 400;
+}
+
+.category-intro {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px $shadow-light;
+    padding: 20px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.category-intro p {
+    margin: 0;
+    line-height: 1.6;
+}
