@@ -1,0 +1,84 @@
+.reels-container {
+    padding: 20px;
+
+    h2 {
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .reels-loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+    }
+
+    .reels-gallery {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+
+        .ant-card {
+            width: calc(20% - 16px);
+            height: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative; // Để đặt lớp phủ chính xác
+            cursor: pointer;
+
+            // Lớp phủ hiển thị khi hover
+            .reels-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.5); // Nền tối cho lớp phủ
+                color: white;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                padding: 10px;
+                text-align: center;
+                border-radius: 8px;
+                pointer-events: none; // Để không cản trở tương tác với các phần tử phía dưới
+            }
+
+            &:hover .reels-overlay {
+                opacity: 1;
+            }
+
+            .reels-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 8px;
+            }
+
+            .reels-overlay h3 {
+                margin: 0;
+                font-size: 16px;
+                font-weight: bold;
+            }
+
+            .like-icon {
+                font-size: 24px;
+                color: white;
+                cursor: pointer;
+                transition: color 0.3s ease;
+
+                &.liked {
+                    color: #ff6f61; // Màu đỏ khi được yêu thích
+                }
+
+                &:hover {
+                    color: #ff6f61;
+                }
+            }
+        }
+    }
+}

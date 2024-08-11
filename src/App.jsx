@@ -7,6 +7,13 @@ import ProductDetail from './pages/ProductDetail';
 import Login from './pages/Login'; // Import trang đăng nhập
 import AppFooter from './components/Footer';
 import SignUp from './pages/SignUp';
+import Posts from './pages/Posts';
+import CheckoutPage from './pages/CheckoutPage';
+import AdminDashboard from './components/admin/AdminDashboard';
+import UserManagement from './components/admin/UserManagement';
+import ProductManagement from './components/admin/ProductManagement';
+import PostManagement from './components/admin/PostManagement';
+import PetManagement from './components/admin/PetManagement';
 
 function App() {
   const location = useLocation();
@@ -26,6 +33,16 @@ function App() {
           element={<Login />}
         />
         <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/posts" element={<Posts />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
+
+        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/admin/users" element={<UserManagement />} />
+        <Route path="/admin/products" element={<ProductManagement />} />
+        <Route path="/admin/posts" element={<PostManagement />} />
+        <Route path="/admin/pets" element={<PetManagement />} />
+
+
       </Routes>
       <AppFooter />
     </>

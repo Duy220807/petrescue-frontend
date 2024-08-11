@@ -50,22 +50,19 @@ export const exchangeRate = 23500;
 
 function Home() {
     const [page, setPage] = useState(1);
-    const [pageSize] = useState(10);
-    const { products, loading, error, totalItems } = useProducts(page, pageSize);
+    const [pageSize] = useState(8); // Hiển thị 5 sản phẩm mỗi trang
+    const { products, loading, error } = useProducts(); // Không cần pageSize và page ở đây
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [sortOrder, setSortOrder] = useState('default');
     const baseURL = "http://localhost:8090";
-
-    // Ví dụ tỷ giá 1 USD = 23,500 VND
 
     const convertToVND = (priceUSD) => {
         return (priceUSD * exchangeRate).toLocaleString('vi-VN', {
             style: 'currency',
             currency: 'VND',
-            currencyDisplay: 'code', // Loại bỏ ký tự ₫ và chỉ hiển thị mã tiền tệ
-        }).replace('VND', ''); // Loại bỏ mã tiền tệ, chỉ giữ lại giá
+            currencyDisplay: 'code',
+        }).replace('VND', '');
     };
-
 
     const handleBuyNow = (id) => {
         alert(`Product ${id} added to cart!`);
@@ -94,6 +91,11 @@ function Home() {
         }
     });
 
+    // Calculate paginated products
+    const startIndex = (page - 1) * pageSize;
+    const paginatedProducts = sortedProducts.slice(startIndex, startIndex + pageSize);
+    const totalItems = sortedProducts.length;
+
     if (loading) {
         return <div className="loading-container"><Spin size="large" /></div>;
     }
@@ -120,7 +122,7 @@ function Home() {
                         <Content style={{ padding: 24, margin: 0, minHeight: 280 }}>
                             <div className="home-container">
                                 <Layout>
-                                    <Sider width={200} theme='light' style={{ paddingTop: 10 }}>
+                                    <Sider width={200} theme='light' style={{ paddingTop: 25 }}>
                                         <ProductCategories
                                             onSelectCategory={setSelectedCategory}
                                         />
@@ -141,7 +143,7 @@ function Home() {
                                                 </Select>
                                             </div>
                                             <Row gutter={24}>
-                                                {sortedProducts
+                                                {paginatedProducts
                                                     .filter(product => !selectedCategory || product.categoryId === selectedCategory)
                                                     .map(product => (
                                                         <Col span={6} key={product.id} style={{ marginBottom: '20px' }}>

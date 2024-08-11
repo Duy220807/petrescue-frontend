@@ -29,6 +29,11 @@
     margin-left: auto; // Đẩy các phần tử trong header-content sang bên phải
     width: auto; // Để header-content không bị giới hạn chiều rộng
 
+    .nav-link {
+        font-size: 16px; // Thay đổi kích thước font
+        padding: 10px 15px; // Thay đổi khoảng cách trong nút
+    }
+
     .search-bar {
         width: 350px; // Tăng chiều rộng của thanh tìm kiếm
         font-size: 18px; // Tăng kích thước chữ trong thanh tìm kiếm

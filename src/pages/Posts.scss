@@ -1,0 +1,62 @@
+.posts-container {
+    padding: 20px;
+
+    .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h2 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .create-post {
+            margin-left: 20px;
+        }
+    }
+
+    .posts-list-container {
+        margin-top: 20px;
+
+        .posts-list-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .posts-list {
+            display: flex;
+            flex-wrap: wrap; // Cho phép các phần tử tràn sang hàng mới
+            gap: 20px; // Khoảng cách giữa các bài đăng
+
+            .post-item {
+                flex: 1 1 calc(20% - 20px); // Chiếm 20% chiều rộng của container trừ khoảng cách
+                box-sizing: border-box; // Đảm bảo padding và border không làm thay đổi kích thước
+                padding: 10px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                .post-image {
+                    width: 100%; // Kích thước hình ảnh chiếm toàn bộ chiều rộng của phần tử
+                    height: auto;
+                    border-radius: 4px;
+                    margin-bottom: 10px;
+                }
+
+                h3 {
+                    margin: 0 0 5px 0;
+                    font-size: 18px;
+                }
+
+                p {
+                    margin: 0;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

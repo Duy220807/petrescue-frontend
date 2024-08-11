@@ -1,8 +1,8 @@
 // src/components/Header.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Layout, Input, Badge, Avatar, Button } from 'antd';
-import { ShoppingCartOutlined, UserOutlined, SearchOutlined } from '@ant-design/icons';
+import { Layout, Input, Badge, Button } from 'antd';
+import { ShoppingCartOutlined, SearchOutlined } from '@ant-design/icons';
 import CartModal from './CartModal'; // Import CartModal
 import './Header.scss'; // Cập nhật tên SCSS nếu cần
 
@@ -36,9 +36,16 @@ function AppHeader({ hideHeader }) {
                             <ShoppingCartOutlined
                                 style={{ fontSize: '24px', color: '#fff' }}
                                 onClick={showCart}
+                                aria-label="Giỏ hàng"
                             />
                         </Badge>
                     </div>
+                    <Link to="/adopt">
+                        <Button type="link" className="nav-link">Adopt</Button>
+                    </Link>
+                    <Link to="/posts">
+                        <Button type="link" className="nav-link">Posts</Button>
+                    </Link>
                     <Link to="/login">
                         <Button type="link" className="login-link2">Login</Button>
                     </Link>
